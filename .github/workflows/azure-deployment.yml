@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Setup dotnet core
         uses: actions/setup-dotnet@v2
         with:
@@ -26,7 +26,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: Publish dotnet app
-        run: dotnet publish -c Release -o ${{ env.DOTNET_ROOT }}
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
